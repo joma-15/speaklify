@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { CategoryIcon } from "./Icons";
 
 function SidebarContent() {
   return (
@@ -50,69 +51,28 @@ function SidebarContent() {
             className="flex items-center px-4 py-2 mt-5 text-black-600 transition-colors duration-300 transform rounded-lg dark:black-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700"
             href="#"
           >
-            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none">
-              <path
-                d="M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M12 14C8.13401 14 5 17.134 5 21H19C19 17.134 15.866 14 12 14Z"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-            <span className="mx-4 font-medium">Casual</span>
+            <CategoryIcon name="Casual" icon="twemoji:speech-balloon" />
           </a>
 
           <a
             className="flex items-center px-4 py-2 mt-5 text-black-600 transition-colors duration-300 transform rounded-lg dark:black-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700"
             href="#"
           >
-            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none">
-              <path
-                d="M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M12 14C8.13401 14 5 17.134 5 21H19C19 17.134 15.866 14 12 14Z"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-            <span className="mx-4 font-medium">Casual</span>
+            <CategoryIcon name="Interview" icon="twemoji:briefcase" />
           </a>
 
           <a
             className="flex items-center px-4 py-2 mt-5 text-black-600 transition-colors duration-300 transform rounded-lg dark:black-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700"
             href="#"
           >
-            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none">
-              <path
-                d="M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M12 14C8.13401 14 5 17.134 5 21H19C19 17.134 15.866 14 12 14Z"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-            <span className="mx-4 font-medium">Casual</span>
+            <CategoryIcon name="Therapy" icon="twemoji:brain" />
+          </a>
+
+          <a
+            className="flex items-center px-4 py-2 mt-5 text-black-600 transition-colors duration-300 transform rounded-lg dark:black-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700"
+            href="#"
+          >
+            <CategoryIcon name="Custom" icon="twemoji:gear" />
           </a>
 
           {/* Add more links here, all with strokeWidth, strokeLinecap, strokeLinejoin fixed */}
@@ -204,7 +164,10 @@ export function Sidebar() {
           <input id="my-drawer" type="checkbox" className="drawer-toggle" />
           <div className="drawer-content">
             {/*to toggle to the drawer element */}
-            <label htmlFor="my-drawer" className="flex flex-col justify-between w-8 h-6 p-1 group drawer-button">
+            <label
+              htmlFor="my-drawer"
+              className="flex flex-col justify-between w-8 h-6 p-1 group drawer-button"
+            >
               <span className="block h-1 bg-gray-800 rounded group-hover:bg-blue-500 transition-all duration-300"></span>
               <span className="block h-1 bg-gray-800 rounded group-hover:bg-blue-500 transition-all duration-300"></span>
               <span className="block h-1 bg-gray-800 rounded group-hover:bg-blue-500 transition-all duration-300"></span>
