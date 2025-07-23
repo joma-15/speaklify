@@ -83,74 +83,13 @@ function SidebarContent() {
   );
 }
 
-// export function Sidebar() {
-//   const [width, setWidth] = useState(window.innerWidth);
-
-//   useEffect(() => {
-//     const handleResize = () => {
-//       setWidth(window.innerWidth);
-//       console.log("Window width:", window.innerWidth);
-//     };
-//     window.addEventListener("resize", handleResize);
-//     return () => window.removeEventListener("resize", handleResize);
-//   }, []);
-
-//   if (width <= 822) {
-//     return (
-//       <div className="drawer">
-//         <button className="drawer-toggle">open drawer</button>
-//         <SidebarContent />
-//       </div>
-//     );
-//   }
-
-//   return <SidebarContent />;
-// }
-
-// export function Sidebar() {
-//   const [isMobile, setIsMobile] = useState(window.innerWidth <= 822);
-
-//   useEffect(() => {
-//     const handleResize = () => {
-//       setIsMobile(window.innerWidth <= 822);
-//     };
-//     window.addEventListener("resize", handleResize);
-//     return () => window.removeEventListener("resize", handleResize);
-//   }, []);
-
-//   if (isMobile) {
-//     // Drawer layout for mobile
-//     return (
-//       <div className="drawer">
-//         <input id="my-drawer" type="checkbox" className="drawer-toggle" />
-//         <div className="drawer-content">
-//           {/* Main page content goes here */}
-//           <label htmlFor="my-drawer" className="btn btn-primary drawer-button">
-//             Open drawer
-//           </label>
-//         </div>
-//         <div className="drawer-side">
-//           <label htmlFor="my-drawer" className="drawer-overlay"></label>
-//           <SidebarContent />
-//         </div>
-//       </div>
-//     );
-//   }
-
-//   // Static sidebar layout for desktop
-//   return (
-//     <aside className="w-80 min-h-screen">
-//       <SidebarContent />
-//     </aside>
-//   );
-// }
 
 export function Sidebar() {
-  const [isMobile, setMobile] = useState(window.innerWidth <= 822); //it will expect boolean value because of the condition
+  const [isMobile, setMobile] = useState(window.innerWidth <= 1325); //it will expect boolean value because of the condition
 
   useEffect(() => {
     const handleClick = () => {
-      setMobile(window.innerWidth <= 822);
+      setMobile(window.innerWidth <= 1325);
       console.log(isMobile);
     };
 
