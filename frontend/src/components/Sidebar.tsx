@@ -184,7 +184,7 @@ function SidebarContent() {
 //   );
 // }
 
-export function SideBar() {
+export function Sidebar() {
   const [isMobile, setMobile] = useState(window.innerWidth <= 822); //it will expect boolean value because of the condition
 
   useEffect(() => {
