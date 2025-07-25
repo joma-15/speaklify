@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
 import { CategoryIcon } from "./Icons";
 import { ThemeController } from "./ThemeController";
+import { useNavigate } from "react-router-dom";
 
 function SidebarContent() {
+  const navigate = useNavigate();
+
   return (
     <aside
       className="flex flex-col w-[40vh] h-screen px-4 py-8 overflow-y-auto bg-white border-r rtl:border-r-0 rtl:border-l dark:bg-base-100 dark:border-gray-700 border-solid border-2 fixed"
@@ -50,12 +53,12 @@ function SidebarContent() {
             <span className="mx-4 font-medium">Dashboard</span>
           </a>
 
-          <a
+          <div
             className="flex items-center px-4 py-2 mt-5 text-black-600 transition-colors duration-300 transform rounded-lg dark:black-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700"
-            href="#"
+            onClick={() => navigate('/casual')}
           >
             <CategoryIcon name="Casual" icon="twemoji:speech-balloon" />
-          </a>
+          </div>
 
           <a
             className="flex items-center px-4 py-2 mt-5 text-black-600 transition-colors duration-300 transform rounded-lg dark:black-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700"

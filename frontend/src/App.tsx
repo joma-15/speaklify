@@ -1,14 +1,15 @@
-import { Sidebar } from "./components/Sidebar";
-import { WrappedImage } from "./components/ImageCard";
+import {HomePage} from "./Pages/HomePage";
+import { Route, Routes } from "react-router-dom";
+import { Casualpage } from "./Pages/CasualPage";
 
 export default function App() {
   return (
     <>
-      <Sidebar />
+      <HomePage/>
 
-      <div className="px-6 pt-10 sm:px-12 md:px-20 lg:px-32 xl:px-40">
-        <WrappedImage />
-      </div>
+      <Routes>
+        <Route path="/casual" element={<Casualpage/>}/>
+      </Routes>
     </>
   );
 }
