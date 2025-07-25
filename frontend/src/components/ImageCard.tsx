@@ -28,9 +28,9 @@ export function ImageCard() {
 
 export function WrappedImage() {
   const [Px, setPx] = useState(() => {
-    const width = window.innerWidth; 
+    const width = window.innerWidth;
 
-    if (width === 1325) return "xl:ml-30"; 
+    if (width === 1325) return "xl:ml-30";
     return width >= 1920 ? "xl:ml-150" : "xl:ml-90";
   });
 
@@ -40,9 +40,9 @@ export function WrappedImage() {
 
       if (width === 1325) {
         setPx("xl:ml-30");
-      }else if (width >= 1920) {
+      } else if (width >= 1920) {
         setPx("xl:ml-150");
-      }else{
+      } else {
         setPx("xl:ml-90");
       }
     };
@@ -52,15 +52,17 @@ export function WrappedImage() {
   }, []);
 
   return (
-    <div
-      className={`grid grid-cols-1 sm:grid-cols-3 gap-10 gap-x-[200px] max-w-[calc(2*24rem)] mx-auto md:place-items-center ${Px}`}
-    >
-      <ImageCard />
-      <ImageCard />
-      <ImageCard />
-      <ImageCard />
-      <ImageCard />
-      <ImageCard />
+    <div className="px-6 pt-10 sm:px-12 md:px-20 lg:px-32 xl:px-40">
+      <div
+        className={`grid grid-cols-1 sm:grid-cols-3 gap-10 gap-x-[200px] max-w-[calc(2*24rem)] mx-auto md:place-items-center ${Px}`}
+      >
+        <ImageCard />
+        <ImageCard />
+        <ImageCard />
+        <ImageCard />
+        <ImageCard />
+        <ImageCard />
+      </div>
     </div>
   );
 }

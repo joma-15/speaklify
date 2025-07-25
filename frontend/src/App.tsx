@@ -8,6 +8,7 @@ export default function App() {
       <HomePage/>
 
       <Routes>
+        <Route path="/" element={<HomePage/>}/>
         <Route path="/casual" element={<Casualpage/>}/>
       </Routes>
     </>
