@@ -1,6 +1,13 @@
 import { useEffect, useState } from "react";
 
-export function ImageCard() {
+type ImageProp = {
+  src: string; 
+  alt: string;
+  title: string; 
+  description: string;
+}
+
+export function ImageCard({src,alt,title,description}: ImageProp) {
   useEffect(() => {
     console.log(window.innerWidth);
   });
@@ -8,25 +15,25 @@ export function ImageCard() {
     <div className="card bg-base-100 shadow-sm border-2 md:w-70 sm:w-65 xl:w-75">
       <figure>
         <img
-          src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-          alt="Shoes"
+          src={src ?? "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"}
+          alt={alt ?? "Failed to Load"}
         />
       </figure>
       <div className="card-body">
-        <h2 className="card-title">Card Title</h2>
+        <h2 className="card-title">{title}</h2>
         <p>
-          A card component has a figure, a body part, and inside body there are
-          title and actions parts
+          {description}
         </p>
         <div className="card-actions justify-end">
-          <button className="btn btn-primary">Buy Now</button>
+          <button className="btn btn-primary">Talk</button>
         </div>
       </div>
     </div>
   );
 }
 
-export function WrappedImage() {
+
+export function WrappedImage({src,alt,title,description}: ImageProp) {
   const [Px, setPx] = useState(() => {
     const width = window.innerWidth;
 
@@ -56,12 +63,12 @@ export function WrappedImage() {
       <div
         className={`grid grid-cols-1 sm:grid-cols-3 gap-10 gap-x-[200px] max-w-[calc(2*24rem)] mx-auto md:place-items-center ${Px}`}
       >
-        <ImageCard />
-        <ImageCard />
-        <ImageCard />
-        <ImageCard />
-        <ImageCard />
-        <ImageCard />
+        <ImageCard src={src} alt={alt} title={title} description={description}/>
+        <ImageCard src={src} alt={alt} title={title} description={description}/>
+        <ImageCard src={src} alt={alt} title={title} description={description}/>
+        <ImageCard src={src} alt={alt} title={title} description={description}/>
+        <ImageCard src={src} alt={alt} title={title} description={description}/>
+        <ImageCard src={src} alt={alt} title={title} description={description}/>
       </div>
     </div>
   );

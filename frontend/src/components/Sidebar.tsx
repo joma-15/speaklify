@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState} from "react";
 import { CategoryIcon } from "./Icons";
 import { ThemeController } from "./ThemeController";
 import { useNavigate } from "react-router-dom";
 
-function SidebarContent() {
+export function SidebarContent() {
   const navigate = useNavigate();
 
   return (
@@ -44,7 +44,7 @@ function SidebarContent() {
 
           <div
             className="flex items-center px-4 py-2 mt-5 text-black-600 transition-colors duration-300 transform rounded-lg dark:black-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700"
-            onClick={() => navigate("/casual")}
+            onClick={() => navigate("/speaklify/casual")}
           >
             <CategoryIcon name="Casual" icon="twemoji:speech-balloon" />
           </div>
@@ -77,7 +77,12 @@ function SidebarContent() {
   );
 }
 
-export function Sidebar() {
+//to wrap components dynamically
+type SidebarContentProp = {
+  Sidebar: React.ComponentType;
+}
+
+export function WrappedSidebar({Sidebar}: SidebarContentProp) {
   const [isMobile, setMobile] = useState(window.innerWidth <= 1325); //it will expect boolean value because of the condition
 
   useEffect(() => {
@@ -112,11 +117,11 @@ export function Sidebar() {
               aria-label="close sidebar"
               className="drawer-overlay"
             ></label>
-            <SidebarContent />
+            <Sidebar/>
           </div>
         </div>
       </>
     );
   }
-  return <SidebarContent />;
+  return <Sidebar/>;
 }
