@@ -21,7 +21,7 @@ export function ImageCard({src,alt,title,description}: ImageProp) {
       </figure>
       <div className="card-body">
         <h2 className="card-title">{title}</h2>
-        <p>
+        <p className="overflow-auto max-h-[40px] text-sm">
           {description}
         </p>
         <div className="card-actions justify-end">

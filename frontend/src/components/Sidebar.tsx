@@ -25,7 +25,7 @@ export function SidebarContent() {
           src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?auto=format&fit=crop&w=634&q=80"
           alt="avatar"
         />
-        <h4 className="mx-2 mt-2 font-medium text-gray-800 dark:text-gray-950">
+        <h4 className="mx-2 mt-2 font-medium text-black-600 dark:text-black-400">
           John Doe
         </h4>
         <p className="mx-2 mt-1 text-sm font-medium text-black-600 dark:text-black-400">
