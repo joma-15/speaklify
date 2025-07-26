@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 type ImageProp = {
   src: string; 
@@ -33,7 +33,11 @@ export function ImageCard({src,alt,title,description}: ImageProp) {
 }
 
 
-export function WrappedImage({src,alt,title,description}: ImageProp) {
+type ImageCardWrapperProp = {
+  children : React.ReactNode;
+}
+
+export function WrappedImageCard({children} : ImageCardWrapperProp) {
   const [Px, setPx] = useState(() => {
     const width = window.innerWidth;
 
@@ -63,12 +67,7 @@ export function WrappedImage({src,alt,title,description}: ImageProp) {
       <div
         className={`grid grid-cols-1 sm:grid-cols-3 gap-10 gap-x-[200px] max-w-[calc(2*24rem)] mx-auto md:place-items-center ${Px}`}
       >
-        <ImageCard src={src} alt={alt} title={title} description={description}/>
-        <ImageCard src={src} alt={alt} title={title} description={description}/>
-        <ImageCard src={src} alt={alt} title={title} description={description}/>
-        <ImageCard src={src} alt={alt} title={title} description={description}/>
-        <ImageCard src={src} alt={alt} title={title} description={description}/>
-        <ImageCard src={src} alt={alt} title={title} description={description}/>
+        {children}
       </div>
     </div>
   );

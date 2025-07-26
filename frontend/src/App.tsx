@@ -8,7 +8,7 @@ export default function App() {
     <>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/speaklify/casual" element={<Casualpage />} />
+        <Route path="/speaklify/casual/" element={<Casualpage />} />
 
         <Route path="*" element={<Navigate to="/" replace/>}/>
       </Routes>

@@ -1,11 +1,12 @@
-import { WrappedImage } from "../components/ImageCard";
+import { WrappedImageCard } from "../components/ImageCard";
 import { WrappedSidebar } from "../components/Sidebar";
-import sunny from "../assets/sunny.png";
 import { SidebarContent } from "../components/Sidebar";
+import { ImageCard } from "../components/ImageCard";
+import sunny from "../assets/sunny.png";
 
 export function Casualpage() {
-  const Content = {
-    image: sunny,
+  const Sunny = {
+    src: sunny,
     alt: "casual image",
     title: "Sunny the Skater",
     description:
@@ -14,13 +15,17 @@ export function Casualpage() {
 
   return (
     <>
-    <WrappedSidebar Sidebar={SidebarContent}/>
-      <WrappedImage
-        src={Content.image}
-        alt={Content.alt}
-        title={Content.title}
-        description={Content.description}
-      />
+      <WrappedSidebar Sidebar={SidebarContent} />
+
+      {/*characters in speaklify */}
+      <WrappedImageCard>
+        <ImageCard {...Sunny}/>
+        <ImageCard {...Sunny}/>
+        <ImageCard {...Sunny}/>
+        <ImageCard {...Sunny}/>
+        <ImageCard {...Sunny}/>
+        <ImageCard {...Sunny}/>
+      </WrappedImageCard>
     </>
   );
 }
