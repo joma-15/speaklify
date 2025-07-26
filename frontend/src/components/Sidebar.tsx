@@ -7,7 +7,7 @@ export function SidebarContent() {
   const navigate = useNavigate();
 
   return (
-    <aside className="flex flex-col w-[40vh] h-screen px-4 py-8 overflow-y-auto bg-white border-r rtl:border-r-0 rtl:border-l dark:bg-base-100 dark:border-gray-700 border-solid border-2 fixed">
+    <aside className="flex flex-col w-[40vh] h-screen px-4 py-8 overflow-y-auto bg-white border-r rtl:border-r-0 rtl:border-l dark:bg-base-100 dark:border-gray-700 border-solid border-2 outline-2 fixed">
       <div>
         <ThemeController />
       </div>
