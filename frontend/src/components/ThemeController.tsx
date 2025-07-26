@@ -1,8 +1,22 @@
+import { useState, useEffect } from "react";
+
 export function ThemeController() {
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem("dataTheme") || "cupcake";
+  }); 
+
+  useEffect(() => {
+    localStorage.setItem("dataTheme", theme); 
+    document.documentElement.setAttribute("data-theme", theme);
+  }); 
+
+  const toggleTheme = () => {
+    setTheme((prevTheme) => (prevTheme === "cupcake" ? "halloween" : "cupcake"));
+  }
   return (
     <label className="swap swap-rotate">
       {/* this hidden checkbox controls the state */}
-      <input type="checkbox" className="theme-controller" value="dark" />
+      <input type="checkbox" className="theme-controller" onChange={toggleTheme} />
 
       {/* sun icon */}
       <svg
@@ -24,3 +38,4 @@ export function ThemeController() {
     </label>
   );
 }
+ 
