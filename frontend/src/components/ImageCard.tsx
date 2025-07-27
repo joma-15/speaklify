@@ -15,7 +15,7 @@ export function ImageCard({src,alt,title,description}: ImageProp) {
     <div className="card bg-base-100 shadow-sm border-2 md:w-70 sm:w-65 xl:w-75">
       <figure>
         <img
-          src={src ?? "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"}
+          src={src}
           alt={alt ?? "Failed to Load"}
         />
       </figure>
