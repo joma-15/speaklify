@@ -1,7 +1,4 @@
-import { WrappedImageCard } from "../components/ImageCard";
-import { WrappedSidebar } from "../components/Sidebar";
-import { SidebarContent } from "../components/Sidebar";
-import { ImageCard } from "../components/ImageCard";
+import { ExtractData } from "../components/ExtractData";
 
 export function Casualpage() {
   const characters = [
@@ -52,30 +49,9 @@ export function Casualpage() {
     }, 
   ];
 
-  // const Sunny =  {
-  //     src: sunny,
-  //     alt: "sunny image",
-  //     title: "Sunny the Skater",
-  //     description: "A fun, energetic teen who loves skating and chill conversations.",
-
-  //   };
-
   return (
     <>
-      <WrappedSidebar Sidebar={SidebarContent} />
-
-      {/*characters in speaklify */}
-      <WrappedImageCard>
-        {characters.map((character, index) => (
-          <ImageCard key={index} {...character} />
-        ))}
-        {/* <ImageCard {...Sunny}/>
-        <ImageCard {...Sunny}/>
-        <ImageCard {...Sunny}/>
-        <ImageCard {...Sunny}/>
-        <ImageCard {...Sunny}/>
-        <ImageCard {...Sunny}/> */}
-      </WrappedImageCard>
+      <ExtractData characters={characters}/>
     </>
   );
 }
