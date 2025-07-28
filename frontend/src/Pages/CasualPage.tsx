@@ -2,17 +2,11 @@ import { WrappedImageCard } from "../components/ImageCard";
 import { WrappedSidebar } from "../components/Sidebar";
 import { SidebarContent } from "../components/Sidebar";
 import { ImageCard } from "../components/ImageCard";
-import sunny from "../assets/sunny.png";
-import auntie from "../assets/auntie.png";
-import raj from "../assets/raj.png";
-import lulu from "../assets/lulu.png";
-import milo from "../assets/milo.png";
-import tia from "../assets/tia.png";
 
 export function Casualpage() {
   const characters = [
     {
-      src: sunny,
+      src: "https://res.cloudinary.com/duszepfug/image/upload/v1753674771/sunny_uyaubf.png",
       alt: "sunny image",
       title: "Sunny",
       description:
@@ -20,29 +14,29 @@ export function Casualpage() {
     },
 
     {
-      src: auntie,
+      src: "https://res.cloudinary.com/duszepfug/image/upload/v1753674778/auntie_ovlrwz.png",
       alt: "auntie image",
       title: "Auntie Meili",
       description:
-        "A loud, dramatic shop owner who yells about discounts, judges your choices, and secretly gives extra pearls when she likes you.",
+        "A loud, dramatic shop owner who yells about discounts.",
     },
 
     {
-      src: raj,
+      src: "https://res.cloudinary.com/duszepfug/image/upload/v1753674771/raj_fzbsvs.png",
       alt: "Raj image",
       title: "Raj the Chatty Foodie 🇮🇳",
       description: "A friendly Indian guy who makes every chat fun and spicy.",
     },
 
     {
-      src: lulu,
+      src: "https://res.cloudinary.com/duszepfug/image/upload/v1753674774/lulu_iqenfa.png",
       alt: "Lulu image",
       title: "Lulu the Chill Musician",
       description: "A calm, creative soul who speaks like a song.",
     },
 
     {
-      src: milo,
+      src: "https://res.cloudinary.com/duszepfug/image/upload/v1753674775/milo_pdkelb.png",
       alt: "Milo image",
       title: "Milo the Gamer",
       description:
@@ -50,7 +44,7 @@ export function Casualpage() {
     }, 
 
      {
-      src: tia,
+      src: "https://res.cloudinary.com/duszepfug/image/upload/v1753674769/tia_woszxn.png",
       alt: "Tia image",
       title: "Tia the Trendy Blogger",
       description:

@@ -17,6 +17,7 @@ export function ImageCard({src,alt,title,description}: ImageProp) {
         <img
           src={src}
           alt={alt ?? "Failed to Load"}
+          loading="lazy"
         />
       </figure>
       <div className="card-body">
