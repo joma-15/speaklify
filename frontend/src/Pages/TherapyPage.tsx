@@ -1,6 +1,6 @@
 import { ExtractData } from "../components/ExtractData";
 
-export function CasualPage() {
+export function TherapyPage() {
   const characters = [
     {
       src: "https://res.cloudinary.com/duszepfug/image/upload/v1753674771/sunny_uyaubf.png",
