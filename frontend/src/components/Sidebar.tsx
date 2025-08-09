@@ -88,7 +88,7 @@ export function WrappedSidebar({Sidebar}: SidebarContentProp) {
   useEffect(() => {
     const handleClick = () => {
       setMobile(window.innerWidth <= 1325);
-      // console.log(isMobile);
+      console.log(isMobile);
     };
 
     window.addEventListener("resize", handleClick);

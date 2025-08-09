@@ -34,22 +34,66 @@ export function ImageCard({src,alt,title,description}: ImageProp) {
 }
 
 
+// type ImageCardWrapperProp = {
+//   children : React.ReactNode;
+// }
+// //this function is to make the cardcomponent responsive in any screen
+// export function WrappedImageCard({children} : ImageCardWrapperProp) {
+//   const [Px, setPx] = useState(() => {//to resize the component dynamically
+//     const width = window.innerWidth;
+
+//     if (width === 1325) return "xl:ml-30";
+//     return width >= 1920 ? "xl:ml-150" : "xl:ml-90";
+//   });
+
+//   const [Col, SetCol] = useState(() => {
+//     const width = window.innerWidth; 
+
+//     if (width === 798) {
+//       return "sm:grid-cols-2";
+//     }
+//   }); 
+
+//   useEffect(() => {
+//     const HandleResize = () => {
+//       const width = window.innerWidth;
+
+//       if (width === 1325) {
+//         setPx("xl:ml-30");
+//       } else if (width >= 1920) {
+//         setPx("xl:ml-150");
+//       } else {
+//         setPx("xl:ml-90");
+//       }
+//     };
+
+//     window.addEventListener("resize", HandleResize);
+//     return () => window.removeEventListener("resize", HandleResize);
+//   }, []);
+
+//   return (
+//     <div className="px-6 pt-10 sm:px-12 md:px-20 lg:px-32 xl:px-40">
+//       <div
+//         className={`grid grid-cols-1 sm:grid-cols-3 gap-10 gap-x-[200px] max-w-[calc(2*24rem)] mx-auto md:place-items-center ${Px}`}
+//       >
+//         {children}
+//       </div>
+//     </div>
+//   );
+// }
 type ImageCardWrapperProp = {
-  children : React.ReactNode;
-}
+  children: React.ReactNode;
+};
 
-export function WrappedImageCard({children} : ImageCardWrapperProp) {
-  const [Px, setPx] = useState(() => {
-    const width = window.innerWidth;
-
-    if (width === 1325) return "xl:ml-30";
-    return width >= 1920 ? "xl:ml-150" : "xl:ml-90";
-  });
+export function WrappedImageCard({ children }: ImageCardWrapperProp) {
+  const [px, setPx] = useState("");
+  const [cols, setCols] = useState("grid-cols-3");
 
   useEffect(() => {
-    const HandleResize = () => {
+    const handleResize = () => {
       const width = window.innerWidth;
 
+      // Margin-left adjustments
       if (width === 1325) {
         setPx("xl:ml-30");
       } else if (width >= 1920) {
@@ -57,16 +101,26 @@ export function WrappedImageCard({children} : ImageCardWrapperProp) {
       } else {
         setPx("xl:ml-90");
       }
+
+      // Column layout
+      if (width <= 645) {
+        setCols("grid-cols-1"); // Phones & very small devices
+      } else if (width <= 796) {
+        setCols("grid-cols-2"); // Small tablets
+      } else {
+        setCols("grid-cols-3"); // Laptops/desktops
+      }
     };
 
-    window.addEventListener("resize", HandleResize);
-    return () => window.removeEventListener("resize", HandleResize);
+    handleResize(); // Run on mount
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return (
     <div className="px-6 pt-10 sm:px-12 md:px-20 lg:px-32 xl:px-40">
       <div
-        className={`grid grid-cols-1 sm:grid-cols-3 gap-10 gap-x-[200px] max-w-[calc(2*24rem)] mx-auto md:place-items-center ${Px}`}
+        className={`grid ${cols} gap-10 gap-x-[200px] max-w-[calc(2*24rem)] mx-auto md:place-items-center ${px}`}
       >
         {children}
       </div>
